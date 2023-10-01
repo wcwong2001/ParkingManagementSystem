@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PaymentActivity">
+
+
+        <!-- Black Header -->
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="#000000"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Account Button -->
+        <Button
+            android:id="@+id/accountButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="ACCOUNT"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+        <!-- Rest of Your Layout -->
+
+
+    <Button
+        android:id="@+id/oneMonthSubscriptionButton"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="1 Month (RM5)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/sixMonthsSubscriptionButton" />
+
+    <Button
+        android:id="@+id/threeMonthsSubscriptionButton"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="3 Months (RM10)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/sixMonthsSubscriptionButton" />
+
+    <Button
+        android:id="@+id/sixMonthsSubscriptionButton"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:text="6 Months (RM20)"
+        app:layout_constraintBottom_toTopOf="@+id/topUpButton"
+        app:layout_constraintEnd_toStartOf="@+id/threeMonthsSubscriptionButton"
+        app:layout_constraintStart_toEndOf="@+id/oneMonthSubscriptionButton" />
+
+    <Button
+        android:id="@+id/topUpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="576dp"
+        android:text="Top Up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/topUpAmountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="RM20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topUpButton" />
+
+    <TextView
+        android:id="@+id/membershipSubscriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="20dp"
+        android:text="Membership Subscription"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/sixMonthsSubscriptionButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/topUpTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="20dp"
+        android:text="Account Balance Top Up"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/topUpButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
