@@ -72,9 +72,16 @@ class LoginActivity : AppCompatActivity() {
                                 }
                             }
 
-                            val intent = Intent(this@LoginActivity, UserProfileActivity::class.java)
-                            intent.putExtra("username", username) // Pass the username
-                            startActivity(intent)
+                            if (userFound.membership == "ADMIN"){
+                                val intent = Intent(this@LoginActivity, AdminDashboardActivity::class.java)
+                                startActivity(intent)
+                            } else {
+                                val intent = Intent(this@LoginActivity, UserProfileActivity::class.java)
+                                intent.putExtra("username", username) // Pass the username
+                                startActivity(intent)
+                            }
+
+
 
                         } else {
                             // Username and/or password don't match, show error message
