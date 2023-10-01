@@ -18,6 +18,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".AdminGenerateReportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminManageUserProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".AdminDashboardActivity"
             android:exported="false" />
         <activity

@@ -58,7 +58,10 @@ class LoginActivity : AppCompatActivity() {
 
                             //Check if membership date is past, and set expired if so
                             val currentTimeMillis = System.currentTimeMillis()
-                            if (userFound.membership != "" && userFound.membership != "Expired") {
+                            if (userFound.userId == "ADMIN"){
+                                val intent = Intent(this@LoginActivity, AdminDashboardActivity::class.java)
+                                startActivity(intent)
+                            }else if (userFound.membership != "" && userFound.membership != "Expired") {
                                 val dateFormat =
                                     SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault())
                                         .apply { timeZone = TimeZone.getTimeZone("GMT+8") }
@@ -70,18 +73,10 @@ class LoginActivity : AppCompatActivity() {
                                             .child("membership").setValue("Expired")
                                     }
                                 }
-                            }
-
-                            if (userFound.membership == "ADMIN"){
-                                val intent = Intent(this@LoginActivity, AdminDashboardActivity::class.java)
-                                startActivity(intent)
-                            } else {
                                 val intent = Intent(this@LoginActivity, UserProfileActivity::class.java)
                                 intent.putExtra("username", username) // Pass the username
                                 startActivity(intent)
                             }
-
-
 
                         } else {
                             // Username and/or password don't match, show error message

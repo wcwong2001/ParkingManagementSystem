@@ -20,7 +20,6 @@ class ParkingMapActivity : AppCompatActivity() {
     private lateinit var parkingButtonB: Button
     private lateinit var parkingButtonC: Button
     private lateinit var accountButton: Button
-    private lateinit var parkingHistoryButton: Button
     private lateinit var assignParkingButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,23 +68,6 @@ class ParkingMapActivity : AppCompatActivity() {
         assignParkingButton.setOnClickListener{
             val username = intent.getStringExtra("username")
             val intent = Intent(this, AssignParkingActivity::class.java)
-            intent.putExtra("username", username)
-            startActivity(intent)
-        }
-
-
-        parkingHistoryButton = findViewById(R.id.parkingHistoryButton)
-        parkingHistoryButton.setOnClickListener{
-            val username = intent.getStringExtra("username")
-            val intent = Intent(this, ParkingAssignmentList::class.java)
-            intent.putExtra("username", username)
-            startActivity(intent)
-        }
-
-        val assignParkingButton = findViewById<Button>(R.id.parkingHistoryButton)
-        assignParkingButton.setOnClickListener {
-            val username = intent.getStringExtra("username")
-            val intent = Intent(this, ParkingAssignmentList::class.java)
             intent.putExtra("username", username)
             startActivity(intent)
         }

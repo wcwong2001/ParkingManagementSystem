@@ -24,7 +24,7 @@ class ParkingAssignmentList : AppCompatActivity() {
         accountButton = findViewById(R.id.btnUserProfile)
         accountButton.setOnClickListener{
             val username = intent.getStringExtra("username")
-            val intent = Intent(this@ParkingAssignmentList, UserProfileActivity::class.java)
+            val intent = Intent(this@ParkingAssignmentList, AdminManageUserProfileActivity::class.java)
             intent.putExtra("username", username)
             startActivity(intent)
         }

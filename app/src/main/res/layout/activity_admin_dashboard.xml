@@ -6,4 +6,48 @@
     android:layout_height="match_parent"
     tools:context=".AdminDashboardActivity">
 
+    <View
+        android:id="@+id/blackBar"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/AdminDashboardLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="Admin Dashboard"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/blackBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/blackBar" />
+
+    <Button
+        android:id="@+id/generateReportButton"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginTop="60dp"
+        android:text="Generate Report"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/manageUserProfileButton" />
+
+    <Button
+        android:id="@+id/manageUserProfileButton"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginTop="240dp"
+        android:text="Manage User Profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blackBar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
