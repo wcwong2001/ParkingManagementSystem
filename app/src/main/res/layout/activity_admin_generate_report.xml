@@ -8,6 +8,15 @@
     android:padding="16dp"
     tools:context=".AdminGenerateReportActivity">
 
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pieChart"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/monthSpinner"
+        android:layout_marginTop="16dp" />
+
+
     <Spinner
         android:id="@+id/monthSpinner"
         android:layout_width="match_parent"
