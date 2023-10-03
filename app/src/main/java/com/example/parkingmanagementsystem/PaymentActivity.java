@@ -41,6 +41,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import androidx.appcompat.widget.Toolbar;
 
 public class PaymentActivity extends AppCompatActivity {
     Button topUpButton;
@@ -64,7 +65,7 @@ public class PaymentActivity extends AppCompatActivity {
          accountButton.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
-                 Intent intent = new Intent(PaymentActivity.this, UserProfileActivity.class);
+                 Intent intent = new Intent(PaymentActivity.this, ParkingMapActivity.class);
                  intent.putExtra("username", username);
                  startActivity(intent);
              }
@@ -73,6 +74,7 @@ public class PaymentActivity extends AppCompatActivity {
         Button oneMonthSubscriptionButton = findViewById(R.id.oneMonthSubscriptionButton);
         Button threeMonthsSubscriptionButton = findViewById(R.id.threeMonthsSubscriptionButton);
         Button sixMonthsSubscriptionButton = findViewById(R.id.sixMonthsSubscriptionButton);
+
 
         oneMonthSubscriptionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -143,8 +145,23 @@ public class PaymentActivity extends AppCompatActivity {
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(request);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Membership Subcription");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Enable the "Up" button
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed(); // Handle "Up" button click
+            }
+        });
+
+
 
     }
+
+
+
 
     private void handleSubscription(double subscriptionAmount, int subscriptionMonths) {
         String username = getIntent().getStringExtra("username");
@@ -349,5 +366,10 @@ public class PaymentActivity extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(request);
     }
+
+
+
+        // Find the "RETURN" button by its ID
+
 
 }
