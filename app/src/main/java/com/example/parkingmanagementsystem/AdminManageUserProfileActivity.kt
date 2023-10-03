@@ -16,6 +16,7 @@ class AdminManageUserProfileActivity : AppCompatActivity() {
     private lateinit var usernameEditText: EditText
     private lateinit var searchButton: Button
     private lateinit var saveButton: Button
+    private lateinit var editButton:Button
 
     private lateinit var database: DatabaseReference
 
@@ -28,6 +29,7 @@ class AdminManageUserProfileActivity : AppCompatActivity() {
         usernameEditText = findViewById(R.id.usernameEditText)
         searchButton = findViewById(R.id.searchButton)
         saveButton = findViewById(R.id.saveButton)
+        editButton = findViewById(R.id.editButton)
 
         parkingHistoryButton = findViewById(R.id.parkingHistoryButton)
         parkingHistoryButton.setOnClickListener{
@@ -50,8 +52,15 @@ class AdminManageUserProfileActivity : AppCompatActivity() {
             fetchUserDetails(username)
         }
 
+        editButton.setOnClickListener {
+            Toast.makeText(this@AdminManageUserProfileActivity, "Field editing enabled", Toast.LENGTH_SHORT).show()
+            // Enable editing of EditText views
+            enableEditing(true)
+        }
+
         saveButton.setOnClickListener {
             updateUserDetails()
+            enableEditing(false)
         }
     }
 
@@ -121,6 +130,21 @@ class AdminManageUserProfileActivity : AppCompatActivity() {
                 }
             })
 
+    }
+
+    private fun enableEditing(enable: Boolean) {
+        val licensePlateEditText = findViewById<EditText>(R.id.licensePlateEditText)
+        val emailEditText = findViewById<EditText>(R.id.emailEditText)
+        val phoneNumberEditText = findViewById<EditText>(R.id.phoneNumberEditText)
+
+        licensePlateEditText.isFocusable = enable
+        licensePlateEditText.isFocusableInTouchMode = enable
+
+        emailEditText.isFocusable = enable
+        emailEditText.isFocusableInTouchMode = enable
+
+        phoneNumberEditText.isFocusable = enable
+        phoneNumberEditText.isFocusableInTouchMode = enable
     }
 }
 

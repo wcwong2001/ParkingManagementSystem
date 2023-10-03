@@ -4,16 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     tools:context=".AdminManageUserProfileActivity">
+
+    <LinearLayout
+        android:id="@+id/customActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal"
+        android:background="@color/black"
+        android:layout_alignParentTop="true">
+
+        <Button
+            android:id="@+id/btnUserProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="ADMIN"
+            android:textColor="@android:color/white"
+            android:background="@android:color/transparent" />
+    </LinearLayout>
+
 
     <EditText
         android:id="@+id/usernameEditText"
-        android:layout_width="match_parent"
+        android:layout_width="395dp"
         android:layout_height="wrap_content"
-        android:hint="Enter Username"
+        android:layout_below="@+id/customActionBar"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="40dp"
+        android:hint="Enter Username" />
 
     <Button
         android:id="@+id/searchButton"
@@ -28,10 +46,13 @@
         android:id="@+id/licensePlateEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="License Plate"
         android:layout_below="@id/searchButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="16dp"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:hint="License Plate" />
 
     <EditText
         android:id="@+id/emailEditText"
@@ -40,7 +61,10 @@
         android:hint="Email"
         android:layout_below="@id/licensePlateEditText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_marginLeft="16dp"/>
 
     <EditText
         android:id="@+id/phoneNumberEditText"
@@ -49,16 +73,23 @@
         android:hint="Phone Number"
         android:layout_below="@id/emailEditText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_marginLeft="16dp"/>
 
     <Button
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save Changes"
         android:layout_below="@id/phoneNumberEditText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="50dp"
+        android:paddingVertical="15dp"
+        android:layout_toEndOf="@+id/editButton"
+        android:text="Save Changes" />
 
     <Button
         android:id="@+id/parkingHistoryButton"
@@ -69,5 +100,16 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:text="Parking History" />
+
+    <Button
+        android:id="@+id/editButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/phoneNumberEditText"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="25dp"
+        android:paddingVertical="15dp"
+        android:text="Edit Profile" />
 
 </RelativeLayout>

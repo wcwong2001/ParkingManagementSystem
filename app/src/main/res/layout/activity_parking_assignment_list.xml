@@ -19,9 +19,9 @@
             android:id="@+id/btnUserProfile"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="ADMIN"
-            android:textColor="@android:color/white"
-            android:background="@android:color/transparent" />
+            android:background="@android:color/transparent"
+            android:text="Back"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 
     <ListView

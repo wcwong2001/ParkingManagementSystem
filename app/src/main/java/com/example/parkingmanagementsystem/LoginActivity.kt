@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ToggleButton
@@ -55,13 +56,9 @@ class LoginActivity : AppCompatActivity() {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         val userFound = snapshot.children.firstOrNull()?.getValue(User::class.java)
                         if (userFound != null && userFound.password == password) {
-
-                            //Check if membership date is past, and set expired if so
-                            val currentTimeMillis = System.currentTimeMillis()
-                            if (userFound.userId == "ADMIN"){
-                                val intent = Intent(this@LoginActivity, AdminDashboardActivity::class.java)
-                                startActivity(intent)
-                            }else if (userFound.membership != "" && userFound.membership != "Expired") {
+                            if (userFound.membership != "" && userFound.membership != "Expired") {
+                                //Check if membership date is past, and set expired if so
+                                val currentTimeMillis = System.currentTimeMillis()
                                 val dateFormat =
                                     SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault())
                                         .apply { timeZone = TimeZone.getTimeZone("GMT+8") }
@@ -73,12 +70,17 @@ class LoginActivity : AppCompatActivity() {
                                             .child("membership").setValue("Expired")
                                     }
                                 }
+                            }
+                            if(userFound.userId == "ADMIN"){
+                                val intent = Intent(this@LoginActivity, AdminDashboardActivity::class.java)
+                                startActivity(intent)
+                            } else {
                                 val intent = Intent(this@LoginActivity, UserProfileActivity::class.java)
-                                intent.putExtra("username", username) // Pass the username
+                                intent.putExtra("username",username)
                                 startActivity(intent)
                             }
 
-                        } else {
+                        }else {
                             // Username and/or password don't match, show error message
                             showLoginErrorDialog(this@LoginActivity)
                         }
