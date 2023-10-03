@@ -1,11 +1,13 @@
 package com.example.parkingmanagementsystem
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
@@ -61,6 +63,12 @@ class AdminGenerateReportActivity : AppCompatActivity() {
 
             override fun onNothingSelected(parentView: AdapterView<*>?) {}
         })
+
+        val adminButton: Button = findViewById(R.id.adminButton)
+        adminButton.setOnClickListener(){
+            val intent = Intent(this@AdminGenerateReportActivity, AdminManageUserProfileActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun calculateParkingIncomeByDay(selectedMonth: Int) {

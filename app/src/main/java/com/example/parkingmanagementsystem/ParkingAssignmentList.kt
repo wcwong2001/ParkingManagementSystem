@@ -23,16 +23,13 @@ class ParkingAssignmentList : AppCompatActivity() {
 
         accountButton = findViewById(R.id.btnUserProfile)
         accountButton.setOnClickListener{
-            val username = intent.getStringExtra("username")
             val intent = Intent(this@ParkingAssignmentList, AdminManageUserProfileActivity::class.java)
-            intent.putExtra("username", username)
             startActivity(intent)
         }
 
         assignmentsListView = findViewById(R.id.parkingAssignmentsListView)
 
         // Retrieve the username passed from the previous activity
-        username = intent.getStringExtra("username") ?: ""
 
         // Initialize Firebase Realtime Database
         val database = FirebaseDatabase.getInstance()

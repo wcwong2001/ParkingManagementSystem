@@ -96,7 +96,13 @@ class AdminManageUserProfileActivity : AppCompatActivity() {
                     // Handle database error if needed
                 }
             })
+        val adminButton:Button = findViewById(R.id.btnUserProfile)
+        adminButton.setOnClickListener(){
+            val intent = Intent(this@AdminManageUserProfileActivity, AdminManageUserProfileActivity::class.java)
+            startActivity(intent)
+        }
     }
+
 
 
     private fun updateUserDetails() {
