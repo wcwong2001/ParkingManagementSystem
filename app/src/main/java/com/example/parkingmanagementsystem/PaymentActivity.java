@@ -50,10 +50,10 @@ public class PaymentActivity extends AppCompatActivity {
     private String customerId;
     private String ephemeralKey;
     private String clientSecret;
-    private String amountStr = "2000"; //RM20 in cents(*100)
+    private final String amountStr = "2000"; //RM20 in cents(*100)
 
-    private FirebaseAuth auth = FirebaseAuth.getInstance();
-    private FirebaseDatabase database = FirebaseDatabase.getInstance();
+    private final FirebaseAuth auth = FirebaseAuth.getInstance();
+    private final FirebaseDatabase database = FirebaseDatabase.getInstance();
     PaymentSheet paymentSheet;
 
     protected void onCreate(Bundle savedInstanceState) {

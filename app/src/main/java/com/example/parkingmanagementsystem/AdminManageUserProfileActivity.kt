@@ -36,7 +36,6 @@ class AdminManageUserProfileActivity : AppCompatActivity() {
             val username = usernameEditText.text.toString()
             if (!username.isNullOrEmpty()){
                 val intent = Intent(this@AdminManageUserProfileActivity, ParkingAssignmentList::class.java)
-                Log.d("username", username)
                 intent.putExtra("username", username)
                 startActivity(intent)
             } else {
@@ -96,9 +95,9 @@ class AdminManageUserProfileActivity : AppCompatActivity() {
                     // Handle database error if needed
                 }
             })
-        val adminButton:Button = findViewById(R.id.btnUserProfile)
-        adminButton.setOnClickListener(){
-            val intent = Intent(this@AdminManageUserProfileActivity, AdminManageUserProfileActivity::class.java)
+        val adminButton:Button = findViewById(R.id.adminButton)
+        adminButton.setOnClickListener {
+            val intent = Intent(this@AdminManageUserProfileActivity, AdminDashboardActivity::class.java)
             startActivity(intent)
         }
     }

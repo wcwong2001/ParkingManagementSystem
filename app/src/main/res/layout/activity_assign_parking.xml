@@ -21,7 +21,7 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             android:theme="?attr/actionBarTheme"
-            android:text="Profile"
+            android:text="@string/profile"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            android:text="PARKING"
+            android:text="@string/parking"
             android:textColor="#FFFFFF" />
     </LinearLayout>
 
@@ -65,7 +65,7 @@
             android:layout_gravity="center"
             android:enabled="false"
             android:layout_marginTop="60dp"
-            android:text="Map Guidance" />
+            android:text="@string/map_guidance" />
 
         <GridLayout
             android:id="@+id/parkingSlotLayout"
@@ -94,14 +94,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Assign Parking For Me"
+            android:text="@string/assign_parking_for_me"
             android:layout_marginTop="16dp"/>
 
         <TextView
             android:id="@+id/assignedSpotTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Assigned Parking Slot: "
+            android:text="@string/assigned_parking_slot"
             android:textSize="18sp"
             android:visibility="gone" /> <!-- Initially hidden -->
 
@@ -109,17 +109,16 @@
             android:id="@+id/cancelAssignmentButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cancel Assignment"
+            android:text="@string/cancel_assignment"
             android:visibility="gone" /> <!-- Initially hidden -->
 
         <TextView
-            android:id="@+id/checkinTimeTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Check-In Time: "
+            android:text="@string/check_in_time"
             android:textSize="16sp"
             android:visibility="gone" />
 

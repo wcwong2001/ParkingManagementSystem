@@ -55,6 +55,13 @@ class AssignParkingActivity : AppCompatActivity() {
         assignedSpotTextView = findViewById(R.id.assignedSpotTextView)
         cancelAssignmentButton = findViewById(R.id.cancelAssignmentButton)
 
+        val parkingButton:Button = findViewById(R.id.parkingButton)
+        parkingButton.setOnClickListener {
+            val intent = Intent(this@AssignParkingActivity, ParkingMapActivity::class.java)
+            intent.putExtra("username", username)
+            startActivity(intent)
+        }
+
         val initParkingLotRef = FirebaseDatabase.getInstance().getReference("lot/$selectedParkingLot")
         updateParkingSlotVisual(initParkingLotRef)
         username?.let { checkAssignedParkingSpot(it) }
@@ -491,7 +498,7 @@ class AssignParkingActivity : AppCompatActivity() {
                             }
                             val alertDialog = alertDialogBuilder.create()
                             alertDialog.show()
-                            deductParkingFee(username!!)
+                            deductParkingFee(username)
 
                         }
 

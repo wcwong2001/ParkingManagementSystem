@@ -13,11 +13,11 @@ class AdminDashboardActivity : AppCompatActivity() {
         val manageUserProfileButton: Button = findViewById(R.id.manageUserProfileButton)
         val generateReportButton: Button = findViewById(R.id.generateReportButton)
 
-        manageUserProfileButton.setOnClickListener(){
+        manageUserProfileButton.setOnClickListener {
             val intent = Intent(this@AdminDashboardActivity, AdminManageUserProfileActivity::class.java)
             startActivity(intent)
         }
-        generateReportButton.setOnClickListener(){
+        generateReportButton.setOnClickListener {
             val intent = Intent(this@AdminDashboardActivity, AdminGenerateReportActivity::class.java)
             startActivity(intent)
         }

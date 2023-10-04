@@ -20,7 +20,7 @@
             android:id="@+id/adminButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="ADMIN"
+            android:text="@string/admin"
             android:textColor="@android:color/white"
             android:background="@android:color/transparent" />
     </LinearLayout>
@@ -44,7 +44,7 @@
         android:id="@+id/parkingIncomeByDayText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Parking Income by Day:"
+        android:text="@string/parking_income_by_day"
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp" />

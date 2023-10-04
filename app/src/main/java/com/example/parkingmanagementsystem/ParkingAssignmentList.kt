@@ -34,6 +34,7 @@ class ParkingAssignmentList : AppCompatActivity() {
         // Initialize Firebase Realtime Database
         val database = FirebaseDatabase.getInstance()
         val usersRef = database.getReference("users")
+        username = intent.getStringExtra("username").toString()
 
         // Retrieve parking assignments for the user
         usersRef.addListenerForSingleValueEvent(object : ValueEventListener {

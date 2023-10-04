@@ -22,7 +22,7 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             android:theme="?attr/actionBarTheme"
-            android:text="Profile"
+            android:text="@string/profile"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -44,7 +44,6 @@
         app:layout_constraintTop_toBottomOf="@+id/headerLayout" />
 
     <View
-        android:id="@+id/divider1"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginTop="28dp"
@@ -55,7 +54,6 @@
         app:layout_constraintTop_toBottomOf="@+id/usernameTextView" />
 
     <LinearLayout
-        android:id="@+id/tableLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -75,7 +73,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Vehicle License Plate"
+                android:text="@string/vehicle_license_plate"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:gravity="start"
@@ -111,7 +109,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_below="@id/vehiclePlateLabelTextView"
-                android:text="Email Address"
+                android:text="@string/email_address"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:gravity="start"
@@ -143,12 +141,11 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/phoneLabelTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_below="@id/emailLabelTextView"
-                android:text="Phone Number"
+                android:text="@string/phone_number"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:gravity="start"
@@ -179,12 +176,11 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/membershipStatusLabelTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_below="@id/balanceTextView"
-                android:text="Membership Status"
+                android:text="@string/membership_status"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:gravity="start"
@@ -216,12 +212,11 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/balanceLabelTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_below="@id/phoneTextView"
-                android:text="Account Balance"
+                android:text="@string/account_balance"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:gravity="start"
@@ -255,7 +250,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="#E13B3B"
-        android:text="Logout"
+        android:text="@string/logout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -265,7 +260,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginBottom="20dp"
-        android:text="Payment"
+        android:text="@string/payment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -277,7 +272,7 @@
         android:layout_marginBottom="120dp"
         android:backgroundTint="#4CAF50"
         android:onClick="onParkingButtonClick"
-        android:text="Parking"
+        android:text="@string/parking"
         android:textAllCaps="true"
         android:textColor="#000000"
         android:textSize="18sp"

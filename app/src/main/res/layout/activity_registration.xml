@@ -15,7 +15,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/backButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
@@ -28,7 +27,7 @@
         android:layout_width="412dp"
         android:layout_height="115dp"
         android:gravity="center"
-        android:text="Registration"
+        android:text="@string/registration"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/registerLayout"
         app:layout_constraintHeight_percent="0.4"
@@ -50,78 +49,78 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Email" />
+            android:text="@string/email" />
 
         <EditText
             android:id="@+id/emailEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
-            android:hint="Enter email address" />
+            android:hint="@string/enter_email_address" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Username" />
+            android:text="@string/username" />
 
         <EditText
             android:id="@+id/usernameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter username" />
+            android:hint="@string/enter_username" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Password" />
+            android:text="@string/password" />
 
         <EditText
             android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:hint="Enter password" />
+            android:hint="@string/enter_password" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="nric" />
+            android:text="@string/nric" />
 
         <EditText
             android:id="@+id/nricEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter NRIC"
+            android:hint="@string/enter_nric"
             android:inputType="number" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Phone Number" />
+            android:text="@string/phone_number" />
 
         <EditText
             android:id="@+id/phoneNumberEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter phone number"
+            android:hint="@string/enter_phone_number"
             android:inputType="phone" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Vehicle License Plate" />
+            android:text="@string/vehicle_license_plate" />
 
         <EditText
             android:id="@+id/vehicleLicensePlateEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter vehicle license plate" />
+            android:hint="@string/enter_vehicle_license_plate" />
 
         <Button
             android:id="@+id/registerButton"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="Register"
+            android:text="@string/register"
             android:layout_marginTop="16dp" />
 
     </LinearLayout>

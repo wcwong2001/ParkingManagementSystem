@@ -85,18 +85,6 @@ class ParkingMapActivity : AppCompatActivity() {
         parkingLotARef.child("availability").addValueEventListener(createParkingLotListener(parkingButtonA,"BLOCK K"))
         parkingLotBRef.child("availability").addValueEventListener(createParkingLotListener(parkingButtonB,"CITC"))
         parkingLotCRef.child("availability").addValueEventListener(createParkingLotListener(parkingButtonC,"EAST CAMPUS"))
-
-        parkingButtonA.setOnClickListener {
-            navigateToParkingLotMap("A")
-        }
-
-        parkingButtonB.setOnClickListener {
-            navigateToParkingLotMap("B")
-        }
-
-        parkingButtonC.setOnClickListener {
-            navigateToParkingLotMap("C")
-        }
     }
 
 
@@ -114,12 +102,6 @@ class ParkingMapActivity : AppCompatActivity() {
         }
     }
 
-    private fun navigateToParkingLotMap(parkingLot: String) {
-        val intent = Intent(this@ParkingMapActivity, ParkingLotMapActivity::class.java)
-        val username = intent.getStringExtra("username")
-        intent.putExtra("username", username)
-        startActivity(intent)
-    }
 
 }
 
