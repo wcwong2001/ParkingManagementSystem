@@ -8,96 +8,115 @@
 
 
         <!-- Black Header -->
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/headerLayout"
-        android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
+        android:layout_width="0dp"
+        android:layout_height="68dp"
         android:background="#000000"
-        android:orientation="horizontal"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:gravity="center_vertical"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <!-- Account Button -->
-        <Button
-            android:id="@+id/accountButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:text="ACCOUNT"
-            android:textColor="#FFFFFF" />
-    </LinearLayout>
-
-        <!-- Rest of Your Layout -->
-
-
-    <Button
-        android:id="@+id/oneMonthSubscriptionButton"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:text="1 Month (RM5)"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/sixMonthsSubscriptionButton" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="?attr/actionBarTheme"
+            android:text="Membership Subcription"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </RelativeLayout>
+        <!-- Account Button -->
+
 
     <Button
         android:id="@+id/threeMonthsSubscriptionButton"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="20dp"
         android:text="3 Months (RM10)"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/sixMonthsSubscriptionButton" />
-
-    <Button
-        android:id="@+id/sixMonthsSubscriptionButton"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
-        android:text="6 Months (RM20)"
-        app:layout_constraintBottom_toTopOf="@+id/topUpButton"
-        app:layout_constraintEnd_toStartOf="@+id/threeMonthsSubscriptionButton"
-        app:layout_constraintStart_toEndOf="@+id/oneMonthSubscriptionButton" />
-
-    <Button
-        android:id="@+id/topUpButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="576dp"
-        android:text="Top Up"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/topUpAmountTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="RM20"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topUpButton" />
 
     <TextView
         android:id="@+id/membershipSubscriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="24dp"
         android:text="Membership Subscription"
         android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@+id/sixMonthsSubscriptionButton"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
+        android:id="@+id/topUpAmountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Top Up now to get yor parking slot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.395"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topUpButton" />
+
+    <Button
+        android:id="@+id/topUpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="384dp"
+        android:text="Top Up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.43"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/topUpTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="16dp"
         android:text="Account Balance Top Up"
         android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@+id/topUpButton"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/oneMonthSubscriptionButton"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="1 Month (RM5)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/sixMonthsSubscriptionButton" />
+
+
+    <Button
+        android:id="@+id/sixMonthsSubscriptionButton"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="72dp"
+        android:text="6 Months (RM20)"
+        app:layout_constraintBottom_toTopOf="@+id/topUpButton"
+        app:layout_constraintEnd_toStartOf="@+id/threeMonthsSubscriptionButton"
+        app:layout_constraintHorizontal_bias="0.322"
+        app:layout_constraintStart_toEndOf="@+id/oneMonthSubscriptionButton" />
+
+    <Button
+        android:id="@+id/accountButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="564dp"
+        android:background="#FF5733"
+        android:text="Get My Parking Now"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
