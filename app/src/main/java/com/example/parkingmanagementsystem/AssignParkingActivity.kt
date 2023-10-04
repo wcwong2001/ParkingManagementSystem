@@ -56,7 +56,7 @@ class AssignParkingActivity : AppCompatActivity() {
         cancelAssignmentButton = findViewById(R.id.cancelAssignmentButton)
 
         val parkingButton:Button = findViewById(R.id.parkingButton)
-        parkingButton.setOnClickListener(){
+        parkingButton.setOnClickListener {
             val intent = Intent(this@AssignParkingActivity, ParkingMapActivity::class.java)
             intent.putExtra("username", username)
             startActivity(intent)
@@ -498,7 +498,7 @@ class AssignParkingActivity : AppCompatActivity() {
                             }
                             val alertDialog = alertDialogBuilder.create()
                             alertDialog.show()
-                            deductParkingFee(username!!)
+                            deductParkingFee(username)
 
                         }
 

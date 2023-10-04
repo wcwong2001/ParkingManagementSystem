@@ -96,7 +96,7 @@ class AdminManageUserProfileActivity : AppCompatActivity() {
                 }
             })
         val adminButton:Button = findViewById(R.id.adminButton)
-        adminButton.setOnClickListener(){
+        adminButton.setOnClickListener {
             val intent = Intent(this@AdminManageUserProfileActivity, AdminDashboardActivity::class.java)
             startActivity(intent)
         }
