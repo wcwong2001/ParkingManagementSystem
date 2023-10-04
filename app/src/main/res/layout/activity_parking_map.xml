@@ -26,7 +26,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:background="@android:color/transparent"
-            android:text="Account"
+            android:text="@string/account"
             android:textAllCaps="true"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
@@ -38,11 +38,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="24dp"
-        android:layout_marginBottom="24dp"
-        app:layout_constraintTop_toBottomOf="@id/headerLayout"
-        app:layout_constraintBottom_toTopOf="@id/parkingHistoryButton"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/headerLayout">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -55,22 +53,22 @@
                 android:id="@+id/parkingButtonA"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:text="Parking A Block K"
-                android:tag="A"/>
+                android:tag="A"
+                android:text="@string/parking_a_block_k" />
 
             <Button
                 android:id="@+id/parkingButtonB"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:text="Parking B CITC"
-                android:tag="B"/>
+                android:tag="B"
+                android:text="@string/parking_b_citc" />
 
             <Button
                 android:id="@+id/parkingButtonC"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:text="Parking C EAST CAMPUS"
-                android:tag="C"/>
+                android:tag="C"
+                android:text="@string/parking_c_east_campus" />
 
         </LinearLayout>
     </FrameLayout>
@@ -78,27 +76,15 @@
     <!-- Assign Parking Button -->
 
     <Button
-        android:id="@+id/parkingHistoryButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
-        android:text="Parking History"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.939"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
         android:id="@+id/assignParkingButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="16dp"
-        android:text="Assign Parking"
+        android:text="@string/assign_parking"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

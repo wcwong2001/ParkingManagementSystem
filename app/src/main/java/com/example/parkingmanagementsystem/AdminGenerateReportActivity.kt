@@ -54,7 +54,7 @@ class AdminGenerateReportActivity : AppCompatActivity() {
         monthSpinner.adapter = adapter
 
         // Calculate and display metrics when a month is selected
-        monthSpinner.setOnItemSelectedListener(object : AdapterView.OnItemSelectedListener {
+        monthSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parentView: AdapterView<*>?, selectedItemView: View?, position: Int, id: Long) {
                 val selectedMonth = position // Month index (0-based)
                 calculateParkingIncomeByDay(selectedMonth)
@@ -62,11 +62,11 @@ class AdminGenerateReportActivity : AppCompatActivity() {
             }
 
             override fun onNothingSelected(parentView: AdapterView<*>?) {}
-        })
+        }
 
         val adminButton: Button = findViewById(R.id.adminButton)
-        adminButton.setOnClickListener(){
-            val intent = Intent(this@AdminGenerateReportActivity, AdminManageUserProfileActivity::class.java)
+        adminButton.setOnClickListener {
+            val intent = Intent(this@AdminGenerateReportActivity, AdminDashboardActivity::class.java)
             startActivity(intent)
         }
     }

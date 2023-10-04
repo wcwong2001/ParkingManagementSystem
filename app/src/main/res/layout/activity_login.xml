@@ -26,8 +26,11 @@
         android:layout_height="0dp"
         android:gravity="center"
 
+
         android:text="PARKING MANAGEMENT SYSTEM"
-        android:textColor="@color/black"
+
+        android:text="@string/parking_management_system"
+
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/loginLayout"
@@ -54,24 +57,35 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
+
             android:textStyle="bold"
             android:text="Username" />
+=======
+            android:text="@string/username" />
+
 
         <EditText
             android:id="@+id/usernameEditText"
             android:layout_width="match_parent"
+
             android:layout_height="58dp"
             android:paddingStart="10dp"
             android:ems="10"
             android:background="@drawable/backgroudedit"
             android:hint="Enter username.." />
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_username" />
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:layout_marginTop="16dp"
             android:textStyle="bold"
             android:text="Password" />
+            android:text="@string/password" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -85,7 +99,11 @@
                 android:paddingStart="10dp"
                 android:background="@drawable/backgroudedit"
                 android:inputType="textPassword"
+
                 android:hint="Enter password.." />
+
+                android:hint="@string/enter_password" />
+
 
             <ToggleButton
                 android:id="@+id/showPasswordToggleButton"
@@ -107,7 +125,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="16dp"
-                android:text="Login"
+                android:text="@string/login"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -115,7 +133,7 @@
                 android:id="@+id/registerButton"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="Register"
+                android:text="@string/register"
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />

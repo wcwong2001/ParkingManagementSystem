@@ -15,10 +15,10 @@
         android:layout_alignParentTop="true">
 
         <Button
-            android:id="@+id/btnUserProfile"
+            android:id="@+id/adminButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="ADMIN"
+            android:text="@string/admin"
             android:textColor="@android:color/white"
             android:background="@android:color/transparent" />
     </LinearLayout>
@@ -31,7 +31,7 @@
         android:layout_below="@+id/customActionBar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:hint="Enter Username" />
+        android:hint="@string/enter_username" />
 
     <Button
         android:id="@+id/searchButton"
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/usernameEditText"
         android:layout_centerHorizontal="true"
-        android:text="Search User"
+        android:text="@string/search_user"
         android:layout_marginTop="20dp" />
 
     <EditText
@@ -52,13 +52,13 @@
         android:layout_marginLeft="16dp"
         android:focusable="false"
         android:focusableInTouchMode="false"
-        android:hint="License Plate" />
+        android:hint="@string/license_plate" />
 
     <EditText
         android:id="@+id/emailEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
+        android:hint="@string/email"
         android:layout_below="@id/licensePlateEditText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
@@ -70,7 +70,7 @@
         android:id="@+id/phoneNumberEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Phone Number"
+        android:hint="@string/phone_number"
         android:layout_below="@id/emailEditText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
@@ -89,7 +89,7 @@
         android:layout_marginEnd="50dp"
         android:paddingVertical="15dp"
         android:layout_toEndOf="@+id/editButton"
-        android:text="Save Changes" />
+        android:text="@string/save_changes" />
 
     <Button
         android:id="@+id/parkingHistoryButton"
@@ -99,7 +99,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
-        android:text="Parking History" />
+        android:text="@string/parking_history" />
 
     <Button
         android:id="@+id/editButton"
@@ -110,6 +110,6 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="25dp"
         android:paddingVertical="15dp"
-        android:text="Edit Profile" />
+        android:text="@string/edit_profile" />
 
 </RelativeLayout>
