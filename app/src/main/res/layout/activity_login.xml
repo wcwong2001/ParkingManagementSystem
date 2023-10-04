@@ -69,7 +69,6 @@
             android:layout_width="match_parent"
 
             android:layout_height="58dp"
-
             android:paddingStart="10dp"
             android:ems="10"
             android:background="@drawable/backgroudedit"
