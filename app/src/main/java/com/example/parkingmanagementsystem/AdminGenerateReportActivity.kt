@@ -66,7 +66,7 @@ class AdminGenerateReportActivity : AppCompatActivity() {
 
         val adminButton: Button = findViewById(R.id.adminButton)
         adminButton.setOnClickListener(){
-            val intent = Intent(this@AdminGenerateReportActivity, AdminManageUserProfileActivity::class.java)
+            val intent = Intent(this@AdminGenerateReportActivity, AdminDashboardActivity::class.java)
             startActivity(intent)
         }
     }
