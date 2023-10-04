@@ -1,17 +1,26 @@
 package com.example.parkingmanagementsystem
 
+import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.github.mikephil.charting.charts.PieChart
+import com.github.mikephil.charting.data.PieData
+import com.github.mikephil.charting.data.PieDataSet
+import com.github.mikephil.charting.data.PieEntry
+import com.github.mikephil.charting.formatter.PercentFormatter
 import com.google.firebase.database.*
 import java.text.SimpleDateFormat
 import java.util.Calendar
+import java.util.Random
 
 class AdminGenerateReportActivity : AppCompatActivity() {
 
@@ -23,6 +32,7 @@ class AdminGenerateReportActivity : AppCompatActivity() {
     private lateinit var parkingIncomeByDayVal: TextView
     private lateinit var peakParkingHourText: TextView
     private lateinit var peakParkingHourVal: TextView
+    private lateinit var pieChart: PieChart
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +42,10 @@ class AdminGenerateReportActivity : AppCompatActivity() {
         monthSpinner = findViewById(R.id.monthSpinner)
         parkingIncomeByDayText = findViewById(R.id.parkingIncomeByDayText)
         parkingIncomeByDayVal = findViewById(R.id.parkingIncomeByDay)
+
+        pieChart = findViewById(R.id.pieChart)
+        pieChart.setUsePercentValues(true)
+        pieChart.description.isEnabled = false
 
 
         val months = resources.getStringArray(R.array.months)
@@ -49,9 +63,16 @@ class AdminGenerateReportActivity : AppCompatActivity() {
 
             override fun onNothingSelected(parentView: AdapterView<*>?) {}
         })
+
+        val adminButton: Button = findViewById(R.id.adminButton)
+        adminButton.setOnClickListener(){
+            val intent = Intent(this@AdminGenerateReportActivity, AdminManageUserProfileActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun calculateParkingIncomeByDay(selectedMonth: Int) {
+        val random = Random()
         val parkingIncomeByDay = mutableMapOf<String, Double>()
 
         // Reference to the parking assignments
@@ -79,11 +100,12 @@ class AdminGenerateReportActivity : AppCompatActivity() {
                             val month = calendar.get(Calendar.MONTH) // 0-based month
 
                             if (month == selectedMonth) {
+                                val color = Color.rgb(random.nextInt(256), random.nextInt(256), random.nextInt(256))
                                 val day = calendar.get(Calendar.DAY_OF_MONTH)
                                 val totalFee = totalFeeStr?.toDouble() ?: 0.0
 
 
-                                val dayMonth = "$day/$month"
+                                val dayMonth = "$day/${month + 1}"
                                 parkingIncomeByDay[dayMonth] = (parkingIncomeByDay[dayMonth] ?: 0.0) + totalFee
                             }
                         } catch (e: NullPointerException) {
@@ -101,6 +123,30 @@ class AdminGenerateReportActivity : AppCompatActivity() {
                 }
                 parkingIncomeByDayText.text = "Parking Income by Day:"
                 parkingIncomeByDayVal.text = parkingIncomeText.toString()
+
+                // Create a list of PieEntries for the pie chart
+                val entries = mutableListOf<PieEntry>()
+                val colors = mutableListOf<Int>()
+
+                for ((dayMonth, income) in parkingIncomeByDay) {
+                    val color = Color.rgb(random.nextInt(256), random.nextInt(256), random.nextInt(256))
+                    entries.add(PieEntry(income.toFloat(), "Day $dayMonth"))
+                    colors.add(color)
+                }
+
+                // Create a PieDataSet
+                val dataSet = PieDataSet(entries, "Parking Income")
+                dataSet.colors = colors
+                dataSet.valueTextColor = Color.BLACK
+                dataSet.valueTextSize = 12f
+
+                // Create a PieData object from the DataSet
+                val data = PieData(dataSet)
+                data.setValueFormatter(PercentFormatter(pieChart))
+
+                // Set the data to the PieChart
+                pieChart.data = data
+                pieChart.invalidate()
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
@@ -108,5 +154,4 @@ class AdminGenerateReportActivity : AppCompatActivity() {
             }
         })
     }
-
 }

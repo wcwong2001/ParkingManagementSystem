@@ -5,8 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
+
     tools:context=".AdminGenerateReportActivity">
+
+    <LinearLayout
+        android:id="@+id/customActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal"
+        android:background="@color/black"
+        android:layout_alignParentTop="true">
+
+        <Button
+            android:id="@+id/adminButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="ADMIN"
+            android:textColor="@android:color/white"
+            android:background="@android:color/transparent" />
+    </LinearLayout>
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pieChart"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/monthSpinner"
+        android:layout_marginTop="16dp" />
+
 
     <Spinner
         android:id="@+id/monthSpinner"
