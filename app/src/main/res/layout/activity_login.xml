@@ -14,7 +14,6 @@
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:scaleType="fitStart"
-
         app:layout_constraintVertical_chainStyle="packed"
         app:srcCompat="@drawable/header"
         tools:ignore="MissingConstraints"
@@ -25,13 +24,10 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:gravity="center"
-
         android:text="@string/parking_management_system"
-
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/loginLayout"
-
         app:layout_constraintHeight_percent="0.4"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
@@ -53,34 +49,25 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-
             android:textStyle="bold"
-            android:text="Username" />
-=======
             android:text="@string/username" />
 
 
         <EditText
             android:id="@+id/usernameEditText"
             android:layout_width="match_parent"
-
             android:layout_height="58dp"
             android:paddingStart="10dp"
             android:ems="10"
             android:background="@drawable/backgroudedit"
-            android:hint="Enter username.." />
-            android:layout_height="wrap_content"
             android:hint="@string/enter_username" />
 
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:layout_marginTop="16dp"
             android:textStyle="bold"
-            android:text="Password" />
             android:text="@string/password" />
 
 
@@ -96,9 +83,6 @@
                 android:paddingStart="10dp"
                 android:background="@drawable/backgroudedit"
                 android:inputType="textPassword"
-
-                android:hint="Enter password.." />
-
                 android:hint="@string/enter_password" />
 
 
