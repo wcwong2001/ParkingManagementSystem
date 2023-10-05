@@ -71,7 +71,7 @@
             android:text="@string/password" />
 
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -90,11 +90,14 @@
                 android:id="@+id/showPasswordToggleButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="230dp"
+
                 android:textOff="Show"
                 android:textOn="Hide"
-                android:layout_marginStart="8dp" />
+                />
 
-        </LinearLayout>
+        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
