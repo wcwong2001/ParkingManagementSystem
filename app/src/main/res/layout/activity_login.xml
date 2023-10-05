@@ -26,9 +26,6 @@
         android:layout_height="0dp"
         android:gravity="center"
 
-
-        android:text="PARKING MANAGEMENT SYSTEM"
-
         android:text="@string/parking_management_system"
 
         android:textSize="24sp"
