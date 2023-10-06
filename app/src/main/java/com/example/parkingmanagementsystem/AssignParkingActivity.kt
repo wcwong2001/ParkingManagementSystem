@@ -34,6 +34,7 @@ class AssignParkingActivity : AppCompatActivity() {
     private lateinit var assignParkingButton: Button
     private lateinit var assignedSpotTextView: TextView
     private lateinit var cancelAssignmentButton: Button
+    private lateinit var checkinTimeTextView: TextView
 
     private lateinit var selectedDestination: String
     private lateinit var availabilityRef: DatabaseReference
@@ -41,12 +42,12 @@ class AssignParkingActivity : AppCompatActivity() {
     private var selectedParkingLot: String = "A" // Default value
     private var username: String? = null
     private var parkingFee: Double = 0.0
+    private var checkInTimeString: String = "";
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_assign_parking)
-
         username = intent.getStringExtra("username")
 
         destinationSpinner = findViewById(R.id.destinationSpinner)
@@ -54,7 +55,9 @@ class AssignParkingActivity : AppCompatActivity() {
         assignParkingButton = findViewById(R.id.parkingHistoryButton)
         assignedSpotTextView = findViewById(R.id.assignedSpotTextView)
         cancelAssignmentButton = findViewById(R.id.cancelAssignmentButton)
+        checkinTimeTextView = findViewById(R.id.checkinTimeTextView)
 
+        checkinTimeTextView.visibility = View.GONE
         val parkingButton:Button = findViewById(R.id.parkingButton)
         parkingButton.setOnClickListener {
             val intent = Intent(this@AssignParkingActivity, ParkingMapActivity::class.java)
@@ -79,6 +82,7 @@ class AssignParkingActivity : AppCompatActivity() {
 
         destinationSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                checkinTimeTextView.visibility = View.GONE
                 selectedDestination = destinations[position]
                 val coordinates = destinationCoordinates[selectedDestination]
                 mapGuidanceButton.isEnabled = coordinates != null
@@ -187,7 +191,7 @@ class AssignParkingActivity : AppCompatActivity() {
     private fun assignParkingSpot(username: String) {
         val parkingLotRef = FirebaseDatabase.getInstance().getReference("lot/$selectedParkingLot")
         checkAssignedParkingSpot(username)
-
+        checkinTimeTextView.visibility = View.VISIBLE
         parkingLotRef.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(parkingSnapshot: DataSnapshot) {
                 for (spotSnapshot in parkingSnapshot.children) {
@@ -307,9 +311,10 @@ class AssignParkingActivity : AppCompatActivity() {
                         val assignmentData = HashMap<String, Any>()
                         assignmentData["parkingLot"] = parkingLot
                         assignmentData["parkingSlotNumber"] = parkingSlotNumber
-                        assignmentData["checkinTime"] = SimpleDateFormat("dd/MM/yyyy HH:mm")
+                        checkInTimeString = SimpleDateFormat("dd/MM/yyyy HH:mm")
                             .apply { timeZone = TimeZone.getTimeZone("GMT+8") }.format(
-                            Calendar.getInstance().time)
+                                Calendar.getInstance().time)
+                        assignmentData["checkinTime"] = checkInTimeString
                         assignmentData["checkoutTime"] = ""
 
                         if (assignmentId != null) {
@@ -354,6 +359,7 @@ class AssignParkingActivity : AppCompatActivity() {
                     // Hide the "Assign Parking" button if a spot is assigned
                     assignParkingButton.visibility = View.GONE
                 }
+                checkinTimeTextView.text = "Check-in Time : " + checkInTimeString
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -366,7 +372,7 @@ class AssignParkingActivity : AppCompatActivity() {
         assignedSpotTextView.text = "Assigned Parking Slot Number: $spotNumber"
         assignedSpotTextView.visibility = View.VISIBLE
         cancelAssignmentButton.visibility = View.VISIBLE
-
+        checkinTimeTextView.text = "Check-in Time : " + checkInTimeString
         cancelAssignmentButton.setOnClickListener {
             cancelParkingAssignment(username!!)
         }
@@ -429,6 +435,7 @@ class AssignParkingActivity : AppCompatActivity() {
 
         assignedSpotTextView.visibility = View.GONE
         cancelAssignmentButton.visibility = View.GONE
+        checkinTimeTextView.visibility = View.GONE
     }
 
 

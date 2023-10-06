@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
+import androidx.appcompat.widget.Toolbar
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -84,5 +85,18 @@ class ParkingAssignmentList : AppCompatActivity() {
                 // Handle database error if needed
             }
         })
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+
+        // Set the Toolbar as the app bar for the activity
+        setSupportActionBar(toolbar)
+        supportActionBar?.title = "Parking History"
+        // Enable the "Up" button (back button)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        // Define the behavior when the "Up" button is pressed
+        toolbar.setNavigationOnClickListener {
+            onBackPressed() // This will simulate a back button press
+        }
     }
+
 }

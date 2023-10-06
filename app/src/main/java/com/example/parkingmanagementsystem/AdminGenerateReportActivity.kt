@@ -12,6 +12,7 @@ import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
@@ -68,6 +69,18 @@ class AdminGenerateReportActivity : AppCompatActivity() {
         adminButton.setOnClickListener {
             val intent = Intent(this@AdminGenerateReportActivity, AdminDashboardActivity::class.java)
             startActivity(intent)
+        }
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+
+        // Set the Toolbar as the app bar for the activity
+        setSupportActionBar(toolbar)
+        supportActionBar?.title = "Manage User Profile"
+        // Enable the "Up" button (back button)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        // Define the behavior when the "Up" button is pressed
+        toolbar.setNavigationOnClickListener {
+            onBackPressed() // This will simulate a back button press
         }
     }
 
