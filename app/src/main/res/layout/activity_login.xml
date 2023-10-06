@@ -11,13 +11,13 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="fitStart"
         app:layout_constraintVertical_chainStyle="packed"
         app:srcCompat="@drawable/header"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-42dp" />
+        tools:layout_editor_absoluteX="-45dp" />
 
     <TextView
         android:id="@+id/titleTextView"
